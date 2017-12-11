@@ -1,0 +1,2 @@
+DROP DATABASE IF EXISTS 'actPot_db';
+CREATE DATABASE 'actPot_db';
