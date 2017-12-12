@@ -8,7 +8,7 @@ module.exports = function(app) {
 
   // GET route for getting all of the todos
   app.get("/api/todos", function(req, res) {
-
+    
   });
 
   // POST route for saving a new todo. You can create a todo using the data on req.body
