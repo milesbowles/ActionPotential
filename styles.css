@@ -35,7 +35,8 @@ a:hover {
 }
 
 body.login {
-  background: rgba(255, 255, 255, 1);
+  background:rgb(32, 32, 32);
+  padding-top: 10%;
 }
 
 .relative {
