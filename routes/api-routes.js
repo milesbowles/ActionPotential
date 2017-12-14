@@ -7,9 +7,9 @@ var db = require("../models");
 module.exports = function(app) {
 
   // GET route for getting all of the todos
-  app.get("/api/todos", function(req, res) {
-    db.todo.findAll({}).then(function(){
-      res.json(dbtodo);
+  app.get("/api/login", function(req, res) {
+    db.user.findAll({}).then(function(){
+      res.json(dbusers);
     });
   });
 

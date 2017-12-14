@@ -1,26 +1,31 @@
 module.exports = function(sequelize, DataTypes) {
-    var stats = sequelize.define("UserAuthentication", {
-      id: {
-        type: DataTypes.STRING,
-      },
+    var Stats = sequelize.define("Stats", {
       gamesWon: {
         type: DataTypes.INTEGER,
+        defaultValue: 0
       },
       gamesPlayed: {
+        type: DataTypes.INTEGER,
+        defaultValue: 0
+      },
+      highScoreMultiplayer: {
         type: DataTypes.INTEGER
       },
-      highScoreMulti: {
-        type: DataTypes.INTEGER
+      highScoreSinglePlayer: {
+        type: DataTypes.INTEGER,
+        defaultValue: 0
       },
-      highScoreSingle: {
-        type: DataTypes.INTEGER
-      },
-      categoryMulti: {
+      categoryMultiplayer: {
         type: DataTypes.STRING
       },
-      categorySingle: {
+      categorySinglePlayer: {
           type: DataTypes.STRING
       }
     });
-    return stats;
+    Stats.associate = function(models){
+      foreignKey: {
+        allowNull: false
+      }
+    }
+    return Stats;
   };

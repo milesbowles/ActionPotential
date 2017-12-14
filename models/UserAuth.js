@@ -1,15 +1,22 @@
 module.exports = function(sequelize, DataTypes) {
-  var user = sequelize.define("UserAuthentication", {
+  var User = sequelize.define("User", {
     username: {
       type: DataTypes.STRING,
+      allowNull: false
     },
     password: {
-      type: DataTypes.STRING
+      type: DataTypes.STRING,
+      allowNull: false
     },
     loggedIn: {
       type: DataTypes.BOOLEAN,
       defaultValue: false
     }
   });
-  return user;
+  User.associate = function(models){
+    User.hasMany(models.Stats, {
+      onDelete: "cascade"
+    });
+  }
+  return User;
 };
