@@ -1,15 +1,12 @@
-var db = require("..models");
+var db = require("../models");
 module.exports = function(app){
-    app.get("api/users", function(req, res){
+    app.get("/api/users", function(req, res){
         db.User.findAll({
             include: [{
-                model: db.Stats,
-                through: {
-                    attributes: ["name"]
-                }
+                model: db.Stats
             }]
         }).then(function(dbUser){
-            res.json(dbAuthor);
+            res.json(dbUser);
         });
     });
     app.get("/api/users/:id", function(req, res){

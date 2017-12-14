@@ -1,0 +1,2 @@
+CREATE DATABASE QuestionQuester_db;
+USE QuestionQuester_db;
